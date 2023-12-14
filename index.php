@@ -8,7 +8,7 @@ $PHONE_NUMBER_ID = __PHONE_NUMBER_ID__;
 $ACCESS_TOKEN = __ACCESS_TOKEN__;
 
 $dest_name = "Pollux";
-$recipient_phone_number = "+33631957338";
+$recipient_phone_number = "numéro du client";
 $business_name = "restaurant des cuons";
 $template_name = "test_template_with_image_and_dest_name";
 $media = "https://www.educatout.com/images/medium/Lenfant-qui-veut-controler-les-autres-FB.jpg";
