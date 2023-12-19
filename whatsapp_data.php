@@ -1,5 +1,10 @@
 <?php
 
+function get_filename($url) {
+    $array = explode("/", $url);
+    return end($array);
+}
+
 function build_data_without_dest_name($template_name, $business_name, $recipient_phone_number, $message_text) {
     $data = array(
         "messaging_product" => "whatsapp",
@@ -172,6 +177,7 @@ function build_data_with_document_and_dest_name($template_name, $business_name, 
                         array(
                             "type" => "document",
                             "document" => array(
+                                "filename" => get_filename($media),
                                 "link" => $media  # "https://www.educatout.com/images/medium/Lenfant-qui-veut-controler-les-autres-FB.jpg"  # noqa
                             )
                         )
@@ -219,6 +225,7 @@ function build_data_with_document_and_no_dest_name($template_name, $business_nam
                         array(
                             "type" => "document",
                             "document" => array(
+                                "filename" => get_filename($media),
                                 "link" => $media  # "https://www.educatout.com/images/medium/Lenfant-qui-veut-controler-les-autres-FB.jpg" # noqa
                             )
                         )
