@@ -8,7 +8,7 @@ $PHONE_NUMBER_ID = __PHONE_NUMBER_ID__;
 $ACCESS_TOKEN = __ACCESS_TOKEN__;
 
 $dest_name = "Pollux";
-$recipient_phone_number = "+33631957338";
+$recipient_phone_number = __RECIPIENT_PHONE_NUMBER__;
 $business_name = "restaurant des cuons";
 $template_name = "test_template_with_image_and_dest_name";
 $media = "https://www.educatout.com/images/medium/Lenfant-qui-veut-controler-les-autres-FB.jpg";
@@ -25,6 +25,11 @@ $data_to_send = json_encode(build_data_with_image_and_dest_name($template_name, 
 $media = "https://www.erudit.org/fr/revues/ltp/1958-v14-n1-ltp0952/1019961ar.pdf";
 $template_name = "test_template_with_document_and_dest_name";
 $data_to_send = json_encode(build_data_with_document_and_dest_name($template_name, $business_name, $recipient_phone_number, $dest_name, $message_text, $media));
+$data_to_send = json_encode(build_data_with_buttons('test_template_with_nomessage_and_1button', $business_name, $recipient_phone_number));
+$data_to_send = json_encode(build_data_with_location($business_name, $recipient_phone_number));
+
+$message_text = "message simple sans template";
+$data_to_send = json_encode(build_data_with_sms($recipient_phone_number, $message_text));
 
 echo "$url <br/>$data_to_send";
  
